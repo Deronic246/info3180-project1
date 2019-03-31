@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block main %}
+<link rel="stylesheet" href="/static/css/app.css">
+<div class="top1">
+    <p></p>
+<img id="mypic" src="{{ url_for('static', filename = 'uploads/' + d[7]) }}"/>
+<div class="text">
+<h4 class="name">{{ d[1] }}</h4>
+<h4 class="name">{{ d[2] }}</h4>
+
+
+<p class="space">{{ d[4] }}</p>
+<p class="space">{{ d[5] }}</p>
+{{ d[8] }}
+</div>
+
+<br></br>
+<h5>About Me</h5>
+<p class="bio">{{ d[6] }}</p>
+
+<p></p>
+
+<button id="btn2" type="submit" name="submit">Send Message</button>
+<button id="btn3" type="submit" name="submit">Follow</button>
+<p></p>
+</div>
+
+{% endblock %}

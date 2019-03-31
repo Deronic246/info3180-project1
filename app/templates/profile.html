@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{%  block main %}
+<link rel="stylesheet" href="/static/css/app.css">
+
+
+<h1 class="heading">Add Profile</h1>
+<br></br>
+<form action="{{ url_for('profile') }}" method="post" enctype="multipart/form-data">
+   {{ form.csrf_token }}
+   <div class="top">
+         <p class="space"></p>
+         <p class="space"></p>
+         <p></p>
+         <div class="space">
+              <p class="txt">{{ form.fname.label }}</p>
+              <!--<br style="line-height:0px;"></br>-->
+              <p class="space"></p>
+              {{ form.fname (class="form-control") }}
+          </div>
+        <br></b>
+        <div class="space">
+            <p class="txt">{{ form.lname.label }}</p>
+             <p class="space"></p>
+            {{ form.lname (class="form-control") }}
+        </div>
+        <br></b>
+        <div class="space">
+            <p class="txt">{{ form.gender.label(class = "form-group") }}</p>
+             <p class="space"></p>
+            {{ form.gender  (class="form-control", placeholder="Select Gender")}}
+        </div>
+        <br></b>
+        <div class="space">
+            <p class="txt">{{ form.email.label }}</p>
+            <p class="space"></p>
+            {{ form.email (class="form-control", placeholder="e.g. jdoe@example.com")}}
+        </div>
+        <br></b>
+        <div class="space">
+            <p class="txt">{{ form.location.label }}</p>
+             <p class="space"></p>
+            {{ form.location (class="form-control", placeholder="e.g. Kingston.Jamaica")}}
+        </div>
+        <br></b>
+        <div ="space">
+            <p class="txt">{{ form.bib.label }}</p>
+             <p class="space"></p>
+            {{ form.bib (class="form-control") }}
+        </div>
+        <br></b>
+        <div class="space">
+            <p class="txt">{{ form.image.label }}</p> 
+             <p class="space"></p>
+            {{ form.image   }}
+        </div>
+        <p class="space"></p>
+        <br></br>
+        <button id="btn" type="submit" name="submit">Add Profile</button>
+        <br></br>
+   </div>
+</form>
+
+{% endblock %}

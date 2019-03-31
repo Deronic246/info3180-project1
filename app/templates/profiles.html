@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block main %}
+<link rel="stylesheet" href="/static/css/app.css">
+<h1 class="heading">Profiles</h1>
+<br></br>
+
+{% include 'flash_messages.html' %}
+{% for all in a %}
+    <div class="top1">
+    <p></p>
+    <img src="{{ url_for('static', filename = 'uploads/' + all[5]) }}"/>
+    <div class="text">
+    <p class="name">{{ all[1] }}</p>
+    <p class="name">{{ all[2] }}</p>
+    
+    
+    <form action="{{ url_for('show_user_profile', userid=all[0]) }}" method="post">
+      
+      <input type="submit" name="submit" value="View Profile" id="vp"</>
+      
+    </form>
+    <p class="space">{{ all[3] }}</p>
+    
+  
+    <p class>{{ all[4] }}</p>
+    </div>
+    
+    <br></br>
+    </div>
+    <br></br>
+    <p></p>
+{% endfor %}
+<br></br>
+
+{% endblock %}
